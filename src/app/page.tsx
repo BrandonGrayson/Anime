@@ -1,27 +1,30 @@
-import { Grid } from "@mui/material";
-import { useEffect, useState } from "react";
+import { Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
 import { Anime } from "@/schemas/schemas";
+import { getHeroData } from "./actions/actions";
+import Image from "next/image";
 
 export default async function Home() {
-  const [heroData, setHeroData] = useState<Anime[]>([]);
+  const response = await getHeroData();
+  const data: Anime = response.data[0];
 
-  const getHeroData = async () => {
-    const res = await fetch(
-      "https://kitsu.io/api/edge/anime?filter[text]=onepiece"
-    );
-
-    if (!res.ok) {
-      throw new Error("failed to fetch hero img data");
-    }
-
-    return res.json();
-  };
-
-  useEffect(() => {
-    const data = getHeroData();
-  }, []);
-
-  console.log("data", heroData);
-
-  return <Grid></Grid>;
+  return (
+    <main>
+      <Image
+        src="/img/one-piece-crew.jpeg"
+        height={400}
+        width={400}
+        alt="Picture of One Piece crew"
+      />
+    </main>
+    // <Grid item xs={12} lg={6} xl={4}>
+    //   <Card sx={{ maxWidth: "100%" }}>
+    //     <CardMedia
+    //       component="img"
+    //       image={}
+    //       alt="One Piece Cover"
+    //       sx={{ height: 1500 }}
+    //     />
+    //   </Card>
+    // </Grid>
+  );
 }
