@@ -2,6 +2,9 @@
 
 import Link from "next/link";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import SearchIcon from "@mui/icons-material/Search";
+import BeenhereIcon from "@mui/icons-material/Beenhere";
+import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 
 export default function Navbar() {
   return (
@@ -12,6 +15,7 @@ export default function Navbar() {
         backgroundColor: "#23252b",
         display: "flex",
         alignItems: "center",
+        justifyContent: "space-between",
       }}
     >
       <div style={{ display: "flex", flexDirection: "row" }}>
@@ -46,6 +50,44 @@ export default function Navbar() {
         <div style={{ width: "80px" }}>
           <Link href={"/"}>News</Link>
           <ArrowDropDownIcon />
+        </div>
+      </div>
+
+      <div style={{ display: "flex", height: "100%" }}>
+        <div style={{ marginTop: "auto", marginBottom: "auto" }}>
+          <p style={{ color: "#fab818" }}>Try Free</p>
+          <p>Premium</p>
+        </div>
+
+        <div
+          style={{
+            marginLeft: "40px",
+            marginTop: "auto",
+            marginBottom: "auto",
+          }}
+        >
+          <SearchIcon />
+        </div>
+
+        <div
+          style={{
+            marginLeft: "40px",
+            marginTop: "auto",
+            marginBottom: "auto",
+          }}
+        >
+          <BeenhereIcon />
+        </div>
+
+        <div
+          style={{
+            marginLeft: "40px",
+            marginTop: "auto",
+            marginBottom: "auto",
+            marginRight: "80px",
+          }}
+        >
+          <PermIdentityOutlinedIcon />
         </div>
       </div>
     </nav>
