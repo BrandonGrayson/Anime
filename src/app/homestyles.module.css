@@ -13,3 +13,10 @@
         transform: translate(-50%, -50%);
     }
 }
+
+.erc-logo .logo-icon {
+    fill: #f47521;
+    display: block;
+    height: inherit;
+    transition: fill .2s ease;
+}

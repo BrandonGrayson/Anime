@@ -2,15 +2,17 @@ import { Anime } from "@/schemas/schemas";
 import { getHeroData } from "./actions/actions";
 import Image from "next/image";
 import styles from "./homestyles.module.css";
+import Navbar from "../../components/Navbar";
 
 export default async function HomePage() {
   const response = await getHeroData();
   const data: Anime = response.data[0];
-  const synopsis = data.attributes.synopsis;
   const title = data.attributes.titles.en;
 
   return (
     <main>
+      <Navbar />
+
       <div
         style={{
           position: "relative",
