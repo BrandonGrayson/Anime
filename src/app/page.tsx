@@ -2,7 +2,7 @@ import { Anime } from "@/schemas/schemas";
 import { getHeroData } from "./actions/actions";
 import Image from "next/image";
 import styles from "./homestyles.module.css";
-import Navbar from "../../components/Navbar";
+import Navbar from "./components/Navbar";
 
 export default async function HomePage() {
   const response = await getHeroData();

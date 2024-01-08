@@ -4,6 +4,14 @@
     left: 10vw
 }
 
+.title:hover {
+    color: white;
+}
+
+.linkHover:hover {
+    background-color: rgb(25, 24, 24);
+}
+
 @media screen and (max-width: 420px) {
     .heroTitle {
         font-size: 2em !important;
@@ -12,11 +20,4 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
-}
-
-.erc-logo .logo-icon {
-    fill: #f47521;
-    display: block;
-    height: inherit;
-    transition: fill .2s ease;
 }

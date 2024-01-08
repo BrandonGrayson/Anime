@@ -5,6 +5,8 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import SearchIcon from "@mui/icons-material/Search";
 import BeenhereIcon from "@mui/icons-material/Beenhere";
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
+import { Box, Typography } from "@mui/material";
+import styles from "../homestyles.module.css";
 
 export default function Navbar() {
   return (
@@ -18,69 +20,88 @@ export default function Navbar() {
         justifyContent: "space-between",
       }}
     >
-      <div style={{ display: "flex", flexDirection: "row" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          height: "100%",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <Link
           href={"/"}
           style={{
-            fontSize: "1.2em",
             marginLeft: "100px",
             marginRight: "40px",
-            color: "#f47521",
-            fontWeight: "bold",
           }}
         >
-          fanimation
+          <Typography
+            sx={{ color: "#f47521", fontWeight: "bold", fontSize: "1.2em" }}
+            className={styles.title}
+          >
+            Fanimation
+          </Typography>
         </Link>
 
-        <div style={{ display: "block", width: "100px" }}>
+        <Box
+          sx={{
+            width: "100px",
+            height: "100%",
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer",
+          }}
+          className={styles.linkHover}
+        >
           <Link style={{ fontSize: "1em" }} href={"/"}>
             Browse
           </Link>
           <ArrowDropDownIcon />
-        </div>
+        </Box>
 
-        <div style={{ width: "80px" }}>
+        <Box sx={{ width: "80px" }}>
           <Link href={"/"}>Games</Link>
-        </div>
+        </Box>
 
-        <div style={{ width: "80px" }}>
+        <Box sx={{ width: "80px" }}>
           <Link href={"/"}>Store</Link>
-        </div>
+        </Box>
 
-        <div style={{ width: "80px" }}>
+        <Box sx={{ width: "80px" }}>
           <Link href={"/"}>News</Link>
           <ArrowDropDownIcon />
-        </div>
-      </div>
+        </Box>
+      </Box>
 
-      <div style={{ display: "flex", height: "100%" }}>
-        <div style={{ marginTop: "auto", marginBottom: "auto" }}>
-          <p style={{ color: "#fab818" }}>Try Free</p>
-          <p>Premium</p>
-        </div>
+      <Box sx={{ display: "flex", height: "100%" }}>
+        <Box sx={{ marginTop: "auto", marginBottom: "auto" }}>
+          <Typography style={{ color: "#fab818" }}>Try Free</Typography>
+          <Typography>Premium</Typography>
+        </Box>
 
-        <div
-          style={{
+        <Box
+          sx={{
             marginLeft: "40px",
             marginTop: "auto",
             marginBottom: "auto",
           }}
         >
           <SearchIcon />
-        </div>
+        </Box>
 
-        <div
-          style={{
+        <Box
+          sx={{
             marginLeft: "40px",
             marginTop: "auto",
             marginBottom: "auto",
           }}
         >
           <BeenhereIcon />
-        </div>
+        </Box>
 
-        <div
-          style={{
+        <Box
+          sx={{
             marginLeft: "40px",
             marginTop: "auto",
             marginBottom: "auto",
@@ -88,8 +109,8 @@ export default function Navbar() {
           }}
         >
           <PermIdentityOutlinedIcon />
-        </div>
-      </div>
+        </Box>
+      </Box>
     </nav>
   );
 }
