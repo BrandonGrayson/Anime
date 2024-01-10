@@ -50,9 +50,8 @@ export default function Navbar() {
             height: "100%",
             display: "flex",
             alignItems: "center",
-            cursor: "pointer",
           }}
-          className={styles.linkHover}
+          className={styles.pointer}
         >
           <Link style={{ fontSize: "1em" }} href={"/"}>
             Browse
@@ -107,8 +106,11 @@ export default function Navbar() {
             marginBottom: "auto",
             marginRight: "80px",
           }}
+          className={styles.pointer}
         >
-          <PermIdentityOutlinedIcon />
+          <Link href="/login">
+            <PermIdentityOutlinedIcon />
+          </Link>
         </Box>
       </Box>
     </nav>

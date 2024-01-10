@@ -8,9 +8,11 @@
     color: white;
 }
 
-.linkHover:hover {
-    background-color: rgb(25, 24, 24);
+.pointer:hover {
+    cursor: pointer;
 }
+
+
 
 @media screen and (max-width: 420px) {
     .heroTitle {
