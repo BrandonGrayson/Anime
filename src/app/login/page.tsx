@@ -1,9 +1,14 @@
 "use client";
 
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 import LoginCard from "../components/login/LoginCard";
+import { useState } from "react";
+import LoginButton from "../components/login/loginButton";
 
 export default function LoginScreen() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <div
       style={{
@@ -24,11 +29,16 @@ export default function LoginScreen() {
         Log In
       </p>
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <LoginCard />
+        <LoginCard
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+        />
       </div>
-      <Button variant="contained" color="success">
-        Log In
-      </Button>
+      <Box sx={{ width: "100vw", display: "flex", justifyContent: "center" }}>
+        <LoginButton email={email} password={password} />
+      </Box>
     </div>
   );
 }
